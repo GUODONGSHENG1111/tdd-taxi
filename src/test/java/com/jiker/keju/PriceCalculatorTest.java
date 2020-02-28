@@ -33,10 +33,10 @@ public class PriceCalculatorTest {
 
     @Test
     public void should_return_price_result() throws IOException {
-        String receipt = "收费6元\n" +
-                "收费7元\n" +
-                "收费13元\n" +
-                "收费7元";
+        String receipt = "收费6元" +
+                "\n收费7元" +
+                "\n收费13元" +
+                "\n收费7元";
         assertEquals(receipt, PriceCalculator.getPriceResult(Util.getFilePath("testData.txt")));
     }
 }
