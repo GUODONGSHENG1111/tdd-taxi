@@ -8,8 +8,7 @@ public class AppRunner {
     public static void main(String[] args) {
         String receipt = "";
         try {
-            String testDataFile = Util.getFilePath("testData.txt");
-            receipt = PriceCalculator.getPriceResult(testDataFile);
+            receipt = PriceCalculator.getPriceResult(args[0]);
         } catch (IOException e) {
             e.printStackTrace();
         }
