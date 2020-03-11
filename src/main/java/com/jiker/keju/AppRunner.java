@@ -7,11 +7,8 @@ public class AppRunner {
 
     public static void main(String[] args) {
         String receipt = "";
-        //System.out.println(args[0]);
-        //String url = Util.getFilePath("testData.txt");
-        //System.out.println(url);
         try {
-            receipt = PriceCalculator.getPriceResult(args[0]);
+            receipt = PriceCalculator.getPriceResult("src/main/resources/"+args[0]);
         } catch (IOException e) {
             e.printStackTrace();
         }
