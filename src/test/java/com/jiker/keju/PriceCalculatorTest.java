@@ -11,10 +11,11 @@ import static org.junit.Assert.assertEquals;
 public class PriceCalculatorTest {
     @Test
     public void should_return_init_price_less_two_kilometers() {
-        assertEquals(6, PriceCalculator.calculator(1.5, 0), 0);
-        assertEquals(6, PriceCalculator.calculator(1.5, 1), 0);
-        assertEquals(7, PriceCalculator.calculator(1.5, 2), 0);
-        assertEquals(7, PriceCalculator.calculator(1.5, 3), 0);
+        PriceCalculator priceCalculator = new PriceCalculator();
+        assertEquals(6, priceCalculator.calculator(1.5, 0), 0);
+        assertEquals(6, priceCalculator.calculator(1.5, 1), 0);
+        assertEquals(7, priceCalculator.calculator(1.5, 2), 0);
+        assertEquals(7, priceCalculator.calculator(1.5, 3), 0);
     }
 
     @Test
@@ -37,6 +38,6 @@ public class PriceCalculatorTest {
                 "\n收费7元" +
                 "\n收费13元" +
                 "\n收费7元";
-        assertEquals(receipt, PriceCalculator.getPriceResult(Util.getFilePath("testData.txt")));
+        assertEquals(receipt, new PriceCalculator().getPriceResult(new Util().getFilePath("testData.txt")));
     }
 }

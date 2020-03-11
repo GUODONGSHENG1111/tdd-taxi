@@ -13,7 +13,7 @@ public class PriceCalculator {
     public static final double BEYOND_EIGHT_PRICE = 1.2;
 
 
-    public  double calculator(double distance, int waitTime) {
+    public double calculator(double distance, int waitTime) {
         double distancePrice = 0;
         double waitPrice = WAIT_PRICE * waitTime;
         if (distance <= INIT_DISTANCE) {

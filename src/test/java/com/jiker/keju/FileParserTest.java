@@ -17,7 +17,7 @@ public class FileParserTest {
         paramMap.put(3.0, 0);
         paramMap.put(10.0, 0);
         paramMap.put(2.0, 3);
-        Assert.assertNotNull(FileParser.fileReader(Util.getFilePath("testData.txt")));
-        Assert.assertEquals(paramMap, FileParser.fileReader(Util.getFilePath("testData.txt")));
+        Assert.assertNotNull(new FileParser().fileReader(new Util().getFilePath("testData.txt")));
+        Assert.assertEquals(paramMap,new FileParser().fileReader(new Util().getFilePath("testData.txt")));
     }
 }
