@@ -16,16 +16,9 @@ public class PriceCalculator {
     public double calculator(double distance, int waitTime) {
         double distancePrice = 0;
         double waitPrice = WAIT_PRICE * waitTime;
-        if (distance <= INIT_DISTANCE) {
-            distancePrice = INIT_PRICE;
-        }
-        if (INIT_DISTANCE < distance && distance <= EIGHT_DISTANCE) {
-            distancePrice = INIT_PRICE + (distance - INIT_DISTANCE) * LESS_EIGHT_PRICE;
-        }
-        if (distance > EIGHT_DISTANCE) {
-            distancePrice = INIT_PRICE + (EIGHT_DISTANCE - INIT_DISTANCE) *
-                    LESS_EIGHT_PRICE + (distance - EIGHT_DISTANCE) * BEYOND_EIGHT_PRICE;
-        }
+        if (distance <= INIT_DISTANCE) { distancePrice = INIT_PRICE;}
+        if (INIT_DISTANCE < distance && distance <= EIGHT_DISTANCE) { distancePrice = INIT_PRICE + (distance - INIT_DISTANCE) * LESS_EIGHT_PRICE; }
+        if (distance > EIGHT_DISTANCE) { distancePrice = INIT_PRICE + (EIGHT_DISTANCE - INIT_DISTANCE) * LESS_EIGHT_PRICE + (distance - EIGHT_DISTANCE) * BEYOND_EIGHT_PRICE; }
         return new BigDecimal(distancePrice + waitPrice).setScale(0, BigDecimal.ROUND_HALF_UP).doubleValue();
     }
 

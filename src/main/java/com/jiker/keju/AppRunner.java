@@ -8,7 +8,7 @@ public class AppRunner {
     public static void main(String[] args) {
         String receipt = "";
         try {
-            receipt = new PriceCalculator().getPriceResult("src/main/resources/"+args[0]);
+            receipt = new PriceCalculator().getPriceResult("src/main/resources/" + args[0]);
         } catch (IOException e) {
             e.printStackTrace();
         }
