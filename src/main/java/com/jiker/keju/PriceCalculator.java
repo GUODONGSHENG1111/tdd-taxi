@@ -13,7 +13,7 @@ public class PriceCalculator {
     public static final double BEYOND_EIGHT_PRICE = 1.2;
 
 
-    public static double calculator(double distance, int waitTime) {
+    public  double calculator(double distance, int waitTime) {
         double distancePrice = 0;
         double waitPrice = WAIT_PRICE * waitTime;
         if (distance <= INIT_DISTANCE) {
@@ -29,9 +29,9 @@ public class PriceCalculator {
         return new BigDecimal(distancePrice + waitPrice).setScale(0, BigDecimal.ROUND_HALF_UP).doubleValue();
     }
 
-    public static String getPriceResult(String filePath) throws IOException {
+    public  String getPriceResult(String filePath) throws IOException {
         String receipt = "";
-        Map<Double, Integer> paramMap = FileParser.fileReader(filePath);
+        Map<Double, Integer> paramMap = new FileParser().fileReader(filePath);
         for (Map.Entry<Double, Integer> entry : paramMap.entrySet()) {
             double price = calculator(entry.getKey(), entry.getValue());
             receipt += "\n收费" + new Double(price).intValue() + "元";

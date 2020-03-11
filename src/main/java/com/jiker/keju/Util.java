@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class Util {
-    public static String getFilePath(String fileName) {
+    public String getFilePath(String fileName) {
         String testDataFile = "";
         File file = new File(Thread.currentThread().getContextClassLoader().getResource(fileName).getFile());
         try {

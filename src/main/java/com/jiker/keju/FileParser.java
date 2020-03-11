@@ -10,7 +10,7 @@ import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
 
 public class FileParser {
-    public static Map<Double, Integer> fileReader(String filepath) throws IOException {
+    public Map<Double, Integer> fileReader(String filepath) throws IOException {
         Map<Double, Integer> paramMap = new LinkedHashMap<>();
         BufferedReader bufferedReader = new BufferedReader(new FileReader(filepath));
         String line = "";
